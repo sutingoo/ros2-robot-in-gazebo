@@ -1,10 +1,11 @@
 # Robot Autónomo con ROS 2 Humble
 
 Este repositorio contiene el desarrollo de un robot móvil diferencial simulado en Gazebo, capaz de realizar navegación autónoma básica mediante visión artificial.
+<p align="center">
+  <img src="imagenes/Gazebo_autonomous_one.gif" width="500" title="Vista de Gazebo">
+</p>
 
-[Gazebo](imagenes/gazebo_autonomous_one.gif)
-[RQT-IMAGE-VIEW](imagenes/rqt-prueba-one.gif)
-## Progreso del Proyecto
+###  Progreso del Proyecto
 
 ### 1: Fundamentos y Simulación
 - Configuración del entorno de desarrollo (Ubuntu 22.04 + ROS 2 Humble).
@@ -16,12 +17,31 @@ Este repositorio contiene el desarrollo de un robot móvil diferencial simulado 
 - **Sensores:** Integración de LIDAR (Rays) y Cámara RGB.
 - **Visión Artificial:** Nodo de procesamiento de imágenes con OpenCV (Detección de carril amarillo).
 - **Control:** Implementación de un controlador **PID** para seguimiento de línea autónomo.
+<p align="center">
+  <img src="imagenes/rqt-prueba-one.gif" width="500" title="RQT-IMAGE-VIEW">
+</p>
+<p align="center">
+  <img src="imagenes/Rviz_one.png" width="500" title="Rviz">
+</p>
 
-[Foto del Robot en Rviz - Vectores xyz](media/Rviz_one.png)
-## Cómo ejecutar la simulación
+## Cómo ejecutar la simulación - Usaremos 2 terminales en simultáneo
 
-1. **Lanzar el entorno y el robot:**
+1. **Lanzar Gazebo con el Robot (Terminal 1)**
    ```bash
-   ros2 launch my_bot_description launch_sim.launch.py
-
-[Media en Gazebo](media/Gazebo_laser_two.png)
+   cd ~/learning-robotics
+   colcon build --packages-select my_bot_description
+   source install/setup.bash
+   ros2 launch my_bot_description sim_launch.py
+   ```
+2.  **Compilar la visión del robot (Terminal 2)**
+   ```bash
+   colcon build --packages-select my_bot_vision
+   source install/setup.bash
+   # Añadimos 'linea_amarilla.sdf' a Gazebo
+   ros2 run gazebo_ros spawn_entity.py -file ~/linea_amarilla.sdf -entity mi_linea_amarilla -x 2.0 -y 0.0 -z 0.0
+   # Compilamos el movimiento autonomo
+   ros2 run my_bot_vision detect_line
+   ```
+<p align="center">
+  <img src="imagenes/Gazebo_laser_two.png" width="500" title="Gazebo">
+</p>
