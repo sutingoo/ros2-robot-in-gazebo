@@ -35,10 +35,11 @@ Este repositorio contiene el desarrollo de un robot móvil diferencial simulado 
    ```
 2.  **Compilar la visión del robot (Terminal 2)**
    ```bash
+   cd ~/learning-robotics
    colcon build --packages-select my_bot_vision
    source install/setup.bash
    # Añadimos 'linea_amarilla.sdf' a Gazebo
-   ros2 run gazebo_ros spawn_entity.py -file ~/linea_amarilla.sdf -entity mi_linea_amarilla -x 2.0 -y 0.0 -z 0.0
+   ros2 run gazebo_ros spawn_entity.py -file src/my_bot_description/urdf/linea_amarilla.sdf -entity mi_linea_amarilla -x 2.0 -y 0.0 -z 0.0
    # Compilamos el movimiento autonomo
    ros2 run my_bot_vision detect_line
    ```
