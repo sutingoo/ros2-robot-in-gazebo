@@ -44,7 +44,7 @@ Este repositorio contiene el desarrollo de un robot móvil diferencial simulado 
    ros2 run my_bot_vision detect_line
    ```
 3. **Mueve el Robot en Gazebo**
-   En Gazebo, posiciona el robot de tal manera que esté a una distancia media de la línea amarilla y pueda verla, cuando la reconozca aparecerá una venta "Camara Original" con un punto rojo sobre la línea.
+En Gazebo, posiciona el robot de tal manera que esté a una distancia media de la línea amarilla y pueda verla, cuando la reconozca aparecerá una venta "Camara Original" con un punto rojo sobre la línea.
    Notas: El robot avanza lento porque esta es una prueba. Cuando el robot está sobre la línea amarilla este dejará de moverse pues llegó a su destino. Este proyecto está libre a comentarios, por favor indicar si encuentra alguna falla, gracias.
 <p align="center">
   <img src="imagenes/Gazebo_laser_two.png" width="500" title="Gazebo">
