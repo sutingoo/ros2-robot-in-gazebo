@@ -18,8 +18,9 @@ Este repositorio contiene el desarrollo de un robot móvil diferencial simulado 
 - **Visión Artificial:** Nodo de procesamiento de imágenes con OpenCV (Detección de carril amarillo).
 - **Control:** Implementación de un controlador **PID** para seguimiento de línea autónomo.
 <p align="center">
-  <img src="imagenes/rqt-prueba-one.gif" width="500" title="RQT-IMAGE-VIEW">
+  <img src="imagenes/Gazebo_laser_two.png" width="500" title="Gazebo">
 </p>
+
 <p align="center">
   <img src="imagenes/Rviz_one.png" width="500" title="Rviz">
 </p>
@@ -48,5 +49,5 @@ Este repositorio contiene el desarrollo de un robot móvil diferencial simulado 
 En Gazebo, posiciona el robot de tal manera que esté a una distancia media de la línea amarilla y pueda verla, cuando la reconozca aparecerá una venta "Camara Original" con un punto rojo sobre la línea.
    Notas: El robot avanza lento porque esta es una prueba. Cuando el robot está sobre la línea amarilla este dejará de moverse pues llegó a su destino. Este proyecto está libre a comentarios, por favor indicar si encuentra alguna falla, gracias.
 <p align="center">
-  <img src="imagenes/Gazebo_laser_two.png" width="500" title="Gazebo">
+  <img src="imagenes/rqt-prueba-one.gif" width="500" title="RQT-IMAGE-VIEW">
 </p>
