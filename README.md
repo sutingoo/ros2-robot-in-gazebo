@@ -29,14 +29,14 @@ Este repositorio contiene el desarrollo de un robot móvil diferencial simulado 
 
 1. **Lanzar Gazebo con el Robot (Terminal 1)**
    ```bash
-   cd ~/learning-robotics
+   cd ~/ros2-robot-in-gazebo-main
    colcon build --packages-select my_bot_description
    source install/setup.bash
    ros2 launch my_bot_description sim_launch.py
    ```
 2.  **Compilar la visión del robot (Terminal 2)**
    ```bash
-   cd ~/learning-robotics
+   cd ~/ros2-robot-in-gazebo-main
    colcon build --packages-select my_bot_vision
    source install/setup.bash
    # Añadimos 'linea_amarilla.sdf' a Gazebo
